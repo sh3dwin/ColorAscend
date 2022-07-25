@@ -148,7 +148,7 @@ class Director:
         1 for moving right
         2 for jumping
         """
-        if self.paused or self.dead or self.transition:
+        if self.paused or self.dead or self.transition or not self.started:
             return
         if self.debug:
             print("move::player.rightFoot: ", self.player.rightFoot)

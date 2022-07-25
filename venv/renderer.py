@@ -254,8 +254,6 @@ class Renderer():
         if self.director.player.shield:
             self.screen.blit(self.bubble, (playerPosX - 15, playerPosY - 10))
 
-
-
     def render_entities(self):
         offsetY = self.director.masterOffset
         # Render the entities
@@ -308,7 +306,6 @@ class Renderer():
             elif isinstance(entity, entities.Item):
                 if entity.type == 6:
                     self.render_item(entity)
-
 
     def render_background(self):
         for i in range(0, self.screen_width, 255):
@@ -371,7 +368,6 @@ class Renderer():
             index += 1
             self.director.player.interactible = interactible
 
-
     def render_main_menu(self, mouse_pos):
         if mouse_pos[1] > (self.screen_height / 6 * 2 - 50) and mouse_pos[1] < (self.screen_height / 6 * 3 - 50):
             text1 = self.get_text_rect(0, 0, "Start game", 120)
@@ -418,7 +414,6 @@ class Renderer():
         text3_rect = text3.get_rect(center=(self.screen_width / 2, (self.screen_height / 6 * 4)))
         self.screen.blit(text3, text3_rect)
 
-
     def render_level(self, mouse_pos):
         self.render_background()
         self.render_sky()
@@ -428,8 +423,6 @@ class Renderer():
         self.render_overlay()
         if not self.director.paused:
             self.render_cursor(mouse_pos)
-
-
 
     def render_transition(self):
         self.screen.fill((0, 0, 0))
